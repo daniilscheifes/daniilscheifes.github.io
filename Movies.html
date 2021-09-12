@@ -64,6 +64,16 @@
 										<div id="includedContent"></div>
 										<iframe src="Movietable.htm" height="300" width="500" title="Iframe Example"></iframe>
 								</header>
+								<div id="CSVTable"></div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>
+
+<script>
+$(function() {
+  $('#CSVTable').CSVToTable('Movietable.csv');
+});
+</script>
+
 							
 							
 
