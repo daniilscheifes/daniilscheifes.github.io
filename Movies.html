@@ -6,6 +6,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="scripts/basic.css">
+            <script src="jquery.js"></script> 
+            <script> 
+            $(function(){
+              $("#includedContent").load("Moviesdatbase.html"); 
+            });
+            </script> 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112768571-1"></script>
 <script>
@@ -58,4 +64,11 @@
 									<p>Below are a selected list of my favourite movies. 
 								</header>
 								
-								<p>
+								
+                                <html> 
+ 
+
+  <body> 
+     <div id="includedContent"></div>
+  </body> 
+</html>
