@@ -33,6 +33,35 @@
 
             }</Script>
 
+            <script>// Wait for the DOM to be ready
+        $(document).ready(function() {
+            // Use JQuery promises to make AJAX XMLHttpRequest
+            promise = $.ajax({
+                type:"GET",
+                url:"Movies.csv",
+                cache:false
+            });
+
+            // Run script when file is ready
+            promise.done(function(data){
+                console.log(data);
+
+                // Table IDs represented as an array
+                var ids = ['Title', 'Year', 'Runtime', 'Director', 'Tags'];
+
+                // Update table
+                for (var x = 0; x < ids.length; x++) {
+                    document.getElementById(ids[x]).innerHTML = data[x];
+                }
+            });
+
+            // Run script if request fails
+            promise.fail(function() {
+                console.log('A failure ocurred');
+            });
+
+        });
+</script>
 
 <script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
