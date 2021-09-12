@@ -62,15 +62,14 @@
 									<h1>Movies</h1>
 									<p>Below is a selected list of my favourite movies. 
 										<div id="includedContent"></div>
-										<iframe src="Movietable.htm" height="300" width="500" title="Iframe Example"></iframe>
-								</header>
-								<div id="CSVTable"></div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>
+										<div id="CSVTable"></div>
+									</header>
+								
+
 
 <script>
 $(function() {
-  $('#CSVTable').CSVToTable('Movietable.csv');
+  $('#CSVTable').CSVToTable('Movies.csv');
 });
 </script>
 
@@ -85,7 +84,9 @@ $(function() {
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>			
+			<script src="assets/js/main.js"></script>		
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+			<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>	
 		</body>
 	
 </html>
