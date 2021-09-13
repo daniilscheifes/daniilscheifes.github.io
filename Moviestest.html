@@ -1,72 +1,38 @@
+<html> 
+<head> 
+<title>show csv</title> 
+</head> 
+<body> 
+    <input type="file" id="fileinput" multiple />
+    <div id="result"></div>
+    <script type="text/javascript">
+      function readMultipleFiles(evt) {
+        //Retrieve all the files from the FileList object
+        var files = evt.target.files; 
 
-<table class="table table-hover">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Year</th>
-            <th>Runtime</th>
-            <th>Director</th>
-            <th>Tags</th>
-        </tr>
-    </thead>
-    <tbody>
+        if (files) {
+            for (var i=0, f; f=files[i]; i++) {
+                  var r = new FileReader();
+                r.onload = (function(f) {
+                    return function(e) {
+                        var contents = e.target.result;
+                        var res = document.getElementById("result");
+                        res.innerHTML = "Got the file<br>" 
+                              +"name: " + f.name + "<br>"
+                              +"type: " + f.type + "<br>"
+                              +"size: " + f.size + " bytes</br>"
+                              + "starts with: " + contents; 
+                    };
+                })(f);
 
-    </tbody>
-</table>
+                r.readAsText(f);
+            }   
+        } else {
+              alert("Failed to load files"); 
+        }
+      }
 
-<script>$(document).ready(function() {
-
-    promise = $.ajax({
-        type:"GET",
-        dataType:"text",
-        url:"Movies.csv",
-        cache:false
-    });
-
-    promise.done(function(data){
-
-        //Parse CSV File
-        //split on new line
-        var dataArr = data.split("\n");
-
-        //for each line in array
-        $.each(dataArr,function(){
-            if (this != "") {
-
-                //split files and create row
-                var row = new String("");
-                valArr = this.split(",");
-                    row += "<tr>"
-
-                $.each(valArr, function(){
-                    row += "<td>" + this +"</td>"
-                });     
-
-                    row += "</tr>"
-
-                    //Add row to table
-                    $('tbody').append(row);
-
-            }
-
-        });
-
-    });
-
-    // Run script if request fails
-    promise.fail(function() {
-       console.log('A failure ocurred');
-    });
-
-});</script>
-
-
-<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>		
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-			<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>
+          document.getElementById('fileinput').addEventListener('change',readMultipleFiles, false);
+    </script>
+</body> 
+</html> 
