@@ -15,7 +15,7 @@
 			#myInput {
 			  background-image: url('/Images/search-icon.png');
 			  background-position: 10px 9px;
-			  background-size: 1% 15%;
+			  background-size: 3% 7%;
 			  background-repeat: no-repeat;
 			  width: 75%;
 			  font-size: 16px;
@@ -400,6 +400,26 @@ function myFunction() {
 			<script src="assets/js/main.js"></script>		
 			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 			<script src="//jquerycsvtotable.googlecode.com/files/jquery.csvToTable.js"></script>	
+								
+								<script src="d3.min.js?v=3.2.8"></script>
+
+        <script type="text/javascript"charset="utf-8">
+            d3.text("Movies.csv", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+
+                var container = d3.select("body")
+                    .append("table")
+
+                    .selectAll("tr")
+                        .data(parsedCSV).enter()
+                        .append("tr")
+
+                    .selectAll("td")
+                        .data(function(d) { return d; }).enter()
+                        .append("td")
+                        .text(function(d) { return d; });
+            });
+        </script>
 		</body>
 	
 </html>
