@@ -18,7 +18,8 @@ table, th, td {
   border-collapse: collapse;
   margin-left:auto;
   margin-right:auto;
-  align="center"
+  align="center";
+	
 }
 th, td {
   padding: 5px;
@@ -26,6 +27,11 @@ th, td {
 th {
   text-align: left;
 }
+			table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+			
 </style>
 </head>
 <body>
@@ -38,7 +44,7 @@ th {
 
     <p>Click on the header of a column to sort the table:</p>
 
-    <table >
+    <table class="center">
       <thead><tr>
         <th><span id="name" class="w3-button table-column">Name <i class="caret"></span></th>
         <th><span id="quantity" class="w3-button table-column">Quantity <i class="caret"></span></th>
