@@ -1,38 +1,34 @@
-<html> 
-<head> 
-<title>show csv</title> 
-</head> 
-<body> 
-    <input type="file" id="fileinput" multiple />
-    <div id="result"></div>
-    <script type="text/javascript">
-      function readMultipleFiles(evt) {
-        //Retrieve all the files from the FileList object
-        var files = evt.target.files; 
-
-        if (files) {
-            for (var i=0, f; f=files[i]; i++) {
-                  var r = new FileReader();
-                r.onload = (function(f) {
-                    return function(e) {
-                        var contents = e.target.result;
-                        var res = document.getElementById("result");
-                        res.innerHTML = "Got the file<br>" 
-                              +"name: " + f.name + "<br>"
-                              +"type: " + f.type + "<br>"
-                              +"size: " + f.size + " bytes</br>"
-                              + "starts with: " + contents; 
-                    };
-                })(f);
-
-                r.readAsText(f);
-            }   
-        } else {
-              alert("Failed to load files"); 
-        }
-      }
-
-          document.getElementById('fileinput').addEventListener('change',readMultipleFiles, false);
-    </script>
-</body> 
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <style>
+         table {
+         border-collapse: collapse;
+         border: 2px black solid;
+         font: 12px sans-serif;
+         }
+         td {
+         border: 1px black solid;
+         padding: 5px;
+         }
+      </style>
+   </head>
+   <body>
+      <div id='container'></div>
+      <script type="text/javascript"charset="utf-8">
+         var data = 'heading1,heading2,heading3,heading4,heading5\nvalue1_1,value2_1,value3_1,value4_1,value5_1\nvalue1_2,value2_2,value3_2,value4_2,value5_2';
+         var lines = data.split("\n"),
+         output = [],
+         i;
+         for (i = 0; i < lines.length; i++)
+         output.push("<tr><td>"
+         + lines[i].slice(0,-1).split(",").join("</td><td>")
+         + "</td></tr>");
+         output = "<table>" + output.join("") + "</table>";
+         var div = document.getElementById('container');
+         
+         div.innerHTML = output;
+      </script>
+   </body>
+</html>
