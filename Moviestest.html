@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-<title>Example Appsss</title>
+<title>Example App</title>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -39,15 +40,15 @@ th {
       <tbody id="mytable"></tbody>
     </table>
   </div>
+
 <script>
-  var table = document.getElementById('mytable');
+var table = document.getElementById('mytable');
 var input = document.getElementById('myinput');
-  var tableData = [
-{name: 'Onion', quantity: 29, price: 1.2, expiry: '2021-09-12'}, {name: 'Apple', quantity: 55, price: 3.3, expiry: '2021-09-22'}, {name: 'Potato', quantity: 25, price: 2.5, expiry: '2021-09-18'}, {name: 'Carrot', quantity: 8, price: 0.8, expiry: '2021-09-25'}
-];
-  var caretUpClassName = 'fa fa-caret-up';
+var tableData = [{name: 'Onion', quantity: 29, price: 1.2, expiry: '2021-09-12'}, {name: 'Apple', quantity: 55, price: 3.3, expiry: '2021-09-22'}, {name: 'Potato', quantity: 25, price: 2.5, expiry: '2021-09-18'}, {name: 'Carrot', quantity: 8, price: 0.8, expiry: '2021-09-25'}];
+var caretUpClassName = 'fa fa-caret-up';
 var caretDownClassName = 'fa fa-caret-down';
-  const sort_by = (field, reverse, primer) => {
+
+const sort_by = (field, reverse, primer) => {
 
   const key = primer ?
     function(x) {
@@ -63,15 +64,17 @@ var caretDownClassName = 'fa fa-caret-down';
     return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
   };
 };
-  // assuming that data is an array
-data.sort(sort_by('price', true));
-  function clearArrow() {
+
+
+function clearArrow() {
   let carets = document.getElementsByClassName('caret');
   for (let caret of carets) {
     caret.className = "caret";
   }
 }
-  function toggleArrow(event) {
+
+
+function toggleArrow(event) {
   let element = event.target;
   let caret, field, reverse;
   if (element.tagName === 'SPAN') {
@@ -96,7 +99,9 @@ data.sort(sort_by('price', true));
   tableData.sort(sort_by(field, reverse));
   populateTable();
 }
-  function populateTable() {
+
+
+function populateTable() {
   table.innerHTML = '';
   for (let data of tableData) {
     let row = table.insertRow(-1);
@@ -115,7 +120,9 @@ data.sort(sort_by('price', true));
 
   filterTable();
 }
-  function filterTable() {
+
+
+function filterTable() {
   let filter = input.value.toUpperCase();
   rows = table.getElementsByTagName("TR");
   let flag = false;
@@ -124,8 +131,15 @@ data.sort(sort_by('price', true));
     let cells = row.getElementsByTagName("TD");
     for (let cell of cells) {
       if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+        if (filter) {
+          cell.style.backgroundColor = 'yellow';
+        } else {
+          cell.style.backgroundColor = '';
+        }
+
         flag = true;
-        break;
+      } else {
+        cell.style.backgroundColor = '';
       }
     }
 
@@ -138,7 +152,9 @@ data.sort(sort_by('price', true));
     flag = false;
   }
 }
-  populateTable();
+
+
+populateTable();
 
 let tableColumns = document.getElementsByClassName('table-column');
 
@@ -151,7 +167,8 @@ for (let column of tableColumns) {
 input.addEventListener('keyup', function(event) {
   filterTable();
 });
-  
 </script>
 </body>
 </html>
+view raw
+sort-filter-table-complete-app.html hosted with ❤ by GitHub
