@@ -1,0 +1,25 @@
+{
+  "name": "daniilscheifes.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "debug.js",
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery-csv": "^1.0.21"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniilscheifes/daniilscheifes.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniilscheifes/daniilscheifes.github.io/issues"
+  },
+  "homepage": "https://github.com/daniilscheifes/daniilscheifes.github.io#readme"
+}
