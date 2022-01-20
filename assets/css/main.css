@@ -1849,12 +1849,16 @@ input, select, textarea {
 .circular_image {
   width: auto;
   height: auto;
+    max-width: 30%;
+    max-height: 30%;
+    min-width: 10%;
+    min-width: 10%;
   border-radius: 50%;
   overflow: hidden;
 
  
-  
-  margin-top: -180px;
+  position: relative;
+  margin-top: -300px;
 
 }
 .circular_image img{
