@@ -1851,18 +1851,14 @@ input, select, textarea {
   height: auto;
   border-radius: 50%;
   overflow: hidden;
-  background-color: blue;
+
  
   
-  margin-top: -150px;
-  */
-  
-  /*for demo*/
-  display:inline-block;
-  vertical-align:top;
+  margin-top: -180px;
+
 }
 .circular_image img{
-  width:100%;
+  width:auto;
 }
 /* Image */
 
