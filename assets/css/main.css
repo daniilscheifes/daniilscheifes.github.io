@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #f3f6fa;
+		background: #2222c9;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -1813,7 +1813,7 @@ input, select, textarea {
 		input[type="password"]:focus,
 		input[type="email"]:focus,
 		textarea:focus {
-			border-color: #83d3c9;
+			border-color: #d4e5d0;
 		}
 
 	input[type="text"],
@@ -1955,7 +1955,7 @@ input, select, textarea {
 			}
 
 			.icon.circle.fa-twitter {
-				background: #70aecd;
+				background: #d4e5d0;
 				color: #fff;
 			}
 
@@ -1969,7 +1969,7 @@ input, select, textarea {
 			}
 
 				.icon.circle.fa-facebook-f:hover {
-					background: #829bc9;
+					background: #d4e5d0;
 				}
 
 			.icon.circle.fa-google-plus-g {
@@ -2064,6 +2064,7 @@ input, select, textarea {
 		position: relative;
 		list-style: none;
 		padding-left: 0;
+        color: 
 	}
 
 		ul.featured-icons li {
@@ -2188,8 +2189,8 @@ input, select, textarea {
 		input[type="reset"].primary,
 		button.primary,
 		.button.primary {
-			background: #83d3c9;
-			border-color: #83d3c9;
+			background: #d4e5d0;
+			border-color: #d4e5d0;
 			color: #fff !important;
 		}
 
@@ -2232,7 +2233,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style2 {
-			background-color: #83d3c9;
+			background-color: #d4e5d0;
 			background-image: url("images/light-bl.svg"), url("images/light-br.svg");
 			background-position: bottom left, bottom right;
 			background-repeat: no-repeat, no-repeat;
@@ -2255,7 +2256,7 @@ input, select, textarea {
 			.wrapper.style2 .button.primary {
 				background: #fff;
 				border-color: #fff;
-				color: #83d3c9 !important;
+				color: #d4e5d0 !important;
 			}
 
 				.wrapper.style2 input[type="button"].primary:hover,
@@ -2494,7 +2495,7 @@ input, select, textarea {
 			}
 
 			.dropotron > li:hover > a {
-				background: #83d3c9;
+				background: #d4e5d0;
 				color: #fff;
 			}
 
