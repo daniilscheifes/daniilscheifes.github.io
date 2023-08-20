@@ -1886,6 +1886,27 @@ bottom: 3cm
   width:auto;
 }
 
+
+.circular_image3 {
+	width: auto;
+	height: auto;
+	  max-width: 80px;
+	  max-height: 80px;
+	  min-width: 60px;
+	  min-width: 60px;
+	border-radius: 50%;
+	overflow: hidden;
+   
+	position: bottom;
+	
+	top:;
+  bottom: 3cm
+  
+  }
+  .circular_image img3{
+	width:auto;
+  }
+  
 /* Image */
 
 	.image {
