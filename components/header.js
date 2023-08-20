@@ -17,7 +17,7 @@ connectedCallback() {
           <ul>
             <li><a href="phd.html">PhD</a></li>
             <li><a href="Thesis.html">Thesis topics</a></li>
-            <li><a href="non-academic.html">Non-academic</a></li>
+            <li><a href="Teaching.html">Teaching</a></li>
           </ul>
         </li>
                       <li class="submenu">
@@ -25,7 +25,6 @@ connectedCallback() {
           <ul>
             <li><a href="Movies.html">Movies</a></li>
             <li><a href="right-sidebar.html">Blog</a></li>
-            <li><a href="no-sidebar.html">More?</a></li>
           </ul>
         </li>
         <li><a href="contact.html" >Contact</a></li>
